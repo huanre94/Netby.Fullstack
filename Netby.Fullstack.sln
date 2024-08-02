@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netby.Fullstack", "Netby.Fullstack\Netby.Fullstack.csproj", "{0BCC36C0-FEA4-4DC9-8163-7E782B0FECCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BCC36C0-FEA4-4DC9-8163-7E782B0FECCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCC36C0-FEA4-4DC9-8163-7E782B0FECCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCC36C0-FEA4-4DC9-8163-7E782B0FECCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCC36C0-FEA4-4DC9-8163-7E782B0FECCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E607175A-5283-4DD8-8F94-E1B1090DE2C1}
+	EndGlobalSection
+EndGlobal
