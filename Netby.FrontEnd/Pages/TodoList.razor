@@ -1,0 +1,48 @@
+﻿@page "/todolist"
+@using System.Text.Json
+
+<h3>TodoList</h3>
+
+<ul>
+	@foreach (var todo in todos)
+	{
+		<li>Titulo: @todo.Titulo</li>
+		<li>Descripcion: @todo.Descripcion</li>
+		<li>Estado tarea: @todo.Completada</li>
+	}
+</ul>
+
+@code {
+	public class TodoItem
+	{
+		public int Id { get; set; }
+		public string Titulo { get; set; }
+		public string Descripcion { get; set; }
+		public DateTime FechaCreacion { get; set; }
+		public DateTime FechaVencimiento { get; set; }
+		public bool Completada { get; set; }
+	}
+
+	string API_URL = "https://localhost:44349/";
+
+	private IEnumerable<TodoItem> todos = Array.Empty<TodoItem>();
+
+	private async Task cargarTodos()
+	{
+		var httpClient = new HttpClient();
+		HttpResponseMessage responseMessage = await httpClient.GetAsync($"{API_URL}api/todo");
+		httpClient.Dispose();
+		if (responseMessage.IsSuccessStatusCode)
+		{
+			using var response = await responseMessage.Content.ReadAsStreamAsync();
+			todos = await JsonSerializer.DeserializeAsync<IEnumerable<TodoItem>>(response);
+		}
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		await this.cargarTodos();
+	}
+
+	
+}
